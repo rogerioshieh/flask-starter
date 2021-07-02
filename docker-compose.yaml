@@ -18,6 +18,7 @@ services:
       - '8080:8080'
 
   worker:
+    image: 'gcr.io/shipyard-dev/flask-web:${SHIPYARD_COMMIT}'
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
