@@ -33,7 +33,7 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
-    image: 'postgres:$POSTGRES_TAG'
+    image: 'postgres:${POSTGRES_TAG}'
     environment:
       POSTGRES_USER: 'obscure-user'
       POSTGRES_PASSWORD: 'obscure-password'
