@@ -11,9 +11,20 @@ services:
       DEV: ${DEV}
       FLASK_DEBUG: '1'
     volumes:
-      - './filesystem/entrypoints:/entrypoints:ro'
-      - './migrations:/srv/migrations'
-      - './src:/srv/src:ro'
+      # - './filesystem/entrypoints:/entrypoints:ro'
+      - type: volume
+        source: ./filesystem/entrypoints
+        target: /entrypoints
+        read_only: true
+      # - './migrations:/srv/migrations'
+      - type: volume
+        source: ./migrations
+        target: /srv/migrations
+      # - './src:/srv/src:ro'
+      - type: volume
+        source: ./src
+        target: /srv/src
+        read_only: true
     ports:
       - '8080:8080'
 
@@ -27,9 +38,20 @@ services:
       FLASK_DEBUG: '1'
     command: '/entrypoints/worker.sh'
     volumes:
-      - './filesystem/entrypoints:/entrypoints:ro'
-      - './migrations:/srv/migrations'
-      - './src:/srv/src:ro'
+      # - './filesystem/entrypoints:/entrypoints:ro'
+      - type: volume
+        source: ./filesystem/entrypoints
+        target: /entrypoints
+        read_only: true
+      # - './migrations:/srv/migrations'
+      - type: volume
+        source: ./migrations
+        target: /srv/migrations
+      # - './src:/srv/src:ro'
+      - type: volume
+        source: ./src
+        target: /srv/src
+        read_only: true
 
   postgres:
     image: 'postgres:9.6-alpine'
@@ -39,7 +61,10 @@ services:
       POSTGRES_DB: 'app'
       PGDATA: '/var/lib/postgresql/data/pgdata'
     volumes:
-      - 'postgres:/var/lib/postgresql/data'
+      # - 'postgres:/var/lib/postgresql/data'
+      - type: volume
+        source: postgres
+        target: /var/lib/postgresql/data
     ports:
       - '5432'
 
