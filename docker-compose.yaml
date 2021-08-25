@@ -15,7 +15,7 @@ services:
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
     ports:
-      - ${PORT:-8080}:${PORT:-8080}
+      - ${PORT:-8081}:${PORT:-8081}
 
   worker:
     labels:
