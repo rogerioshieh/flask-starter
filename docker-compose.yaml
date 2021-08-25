@@ -15,7 +15,7 @@ services:
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
     ports:
-      - ${PORT:-8081}:${PORT:-8081}
+      - ${PORT:-8080}:${PORT:-8080}
 
   worker:
     labels:
@@ -30,6 +30,7 @@ services:
       - './filesystem/entrypoints:/entrypoints:ro'
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
+    ports: []
 
   postgres:
     image: 'postgres:9.6-alpine'
