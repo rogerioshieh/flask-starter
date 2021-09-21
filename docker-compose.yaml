@@ -4,10 +4,10 @@ services:
 
   web:
     labels:
-      shipyard.route: '/${ROUTE}'
+      shipyard.route: '/'
     build: '.'
     environment:
-      DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
+      DATABASE_URL: '${POSTGRES}://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
       FLASK_DEBUG: '1'
     volumes:
