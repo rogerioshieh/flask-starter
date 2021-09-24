@@ -4,7 +4,7 @@ services:
 
   web:
     labels:
-      shipyard.route: '/'
+      shipyard.route: '/some-route'
     build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
