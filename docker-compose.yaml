@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  web:
+  wEb:
     labels:
       shipyard.route: '/'
     build: '.'
@@ -17,7 +17,7 @@ services:
     ports:
       - '8080:8080'
 
-  worker:
+  worKer:
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
@@ -31,7 +31,7 @@ services:
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
 
-  postgres:
+  postGres:
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
@@ -43,7 +43,7 @@ services:
     ports:
       - '5432'
 
-  redis:
+  reDis:
     image: 'redis:5.0-alpine'
     ports:
       - '6379'
