@@ -2,11 +2,11 @@ version: '3'
 
 services:
 
-  webMain:
-    image: webmain-image
+  web:
     labels:
       shipyard.route: '/'
     build: '.'
+    container_name: webMain
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
@@ -18,11 +18,11 @@ services:
     ports:
       - '8080:8080'
 
-  workerMain:
-    image: workmain-image
+  worker:
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
+    container_name: workerMain
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
@@ -35,6 +35,7 @@ services:
 
   postgres:
     image: 'postgres:9.6-alpine'
+    container_name: postgresMain
     environment:
       POSTGRES_USER: 'obscure-user'
       POSTGRES_PASSWORD: 'obscure-password'
@@ -45,7 +46,8 @@ services:
     ports:
       - '5432'
 
-  redisMain:
+  redis:
+    container_name: redisMain
     image: 'redis:5.0-alpine'
     ports:
       - '6379'
