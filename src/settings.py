@@ -14,7 +14,7 @@ class Settings:
 
     # General
     DEV = Parse.bool('DEV')
-    REDIS_HOST = os.getenv('REDIS_HOST', 'redis')
+    REDIS_HOST = os.getenv('REDIS_HOST', 'redisMain')
     REDIS_URL = f'redis://{REDIS_HOST}:6379'
 
     # Database
