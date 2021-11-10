@@ -32,7 +32,7 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
-    image: 'postgres:9.6-alpine'
+    image: 'lskjdfslfkdj:9.6-kdjfl'
     environment:
       POSTGRES_USER: 'obscure-user'
       POSTGRES_PASSWORD: 'obscure-password'
@@ -44,7 +44,7 @@ services:
       - '5432'
 
   redis:
-    image: 'redis:5.0-alpine'
+    image: 'redis:5.0-kdklslkjl'
     ports:
       - '6379'
 
