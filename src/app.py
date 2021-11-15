@@ -12,11 +12,13 @@ class Application:
     @classmethod
     def boot(cls):
         """Begin the application"""
+        raise Exception('Boom')
         app = cls()
         app.run()
         return app
 
     def __init__(self):
+        raise Exception('Boom')
         self.init_flask()
         self.init_routes()
 
