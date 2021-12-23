@@ -30,7 +30,7 @@ services:
       - './filesystem/entrypoints:/entrypoints:ro'
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
-
+      - '/srv/src'
   postgres:
     image: 'postgres:9.6-alpine'
     environment:
