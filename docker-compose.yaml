@@ -5,7 +5,6 @@ services:
   web:
     labels:
       shipyard.route: '/web2'
-      shipyard.route.oauth.gitlab.redirect-uri: /callback/gitlab
     build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
