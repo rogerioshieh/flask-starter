@@ -2,6 +2,14 @@ FROM python:3.8.8-alpine3.13
 
 WORKDIR /srv
 
+ARG foo
+ARG foofoo
+ARG foofoofoo
+
+RUN echo "foo: $foo"
+RUN echo "foofoo: $foofoo"
+RUN echo "foofoofoo: $foofoofoo"
+
 # Install system dependencies for: uWSGI, poetry, watchman
 RUN apk add --update --no-cache \
       gcc \

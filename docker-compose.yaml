@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        - FOO_FOO=barbar
+        - foofoo=barbar
     labels:
       shipyard.route: '/'
     build: '.'
@@ -25,7 +25,7 @@ services:
     build:
       context: .
       args:
-        - FOO=bar
+        - foo=bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
@@ -43,7 +43,7 @@ services:
     build:
       context: .
       args:
-        - FOO_FOO_FOO=barbarbar
+        - foofoofoo=barbarbar
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
