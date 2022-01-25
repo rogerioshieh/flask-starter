@@ -22,8 +22,8 @@ services:
 
   worker:
     build:
-        args:
-          FOO: bar
+      args:
+        FOO: bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
