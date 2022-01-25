@@ -9,7 +9,6 @@ services:
         foofoo: barbar
     labels:
       shipyard.route: '/'
-    build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
@@ -28,7 +27,6 @@ services:
         foo: bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
-    build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
