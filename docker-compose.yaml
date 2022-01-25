@@ -5,7 +5,7 @@ services:
   web:
     build:
       args:
-        FOO_FOO: barbar
+        - FOO_FOO=barbar
     labels:
       shipyard.route: '/'
     build: '.'
@@ -23,7 +23,7 @@ services:
   worker:
     build:
       args:
-        FOO: bar
+        - FOO=bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     build: '.'
@@ -40,7 +40,7 @@ services:
   postgres:
     build:
       args:
-        FOO_FOO_FOO: barbarbar
+        - FOO_FOO_FOO=barbarbar
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
