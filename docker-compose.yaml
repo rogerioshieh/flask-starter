@@ -4,6 +4,7 @@ services:
 
   web:
     build:
+      context: .
       args:
         - FOO_FOO=barbar
     labels:
@@ -22,6 +23,7 @@ services:
 
   worker:
     build:
+      context: .
       args:
         - FOO=bar
     labels:
@@ -39,6 +41,7 @@ services:
 
   postgres:
     build:
+      context: .
       args:
         - FOO_FOO_FOO=barbarbar
     image: 'postgres:9.6-alpine'
