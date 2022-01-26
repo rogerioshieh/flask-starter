@@ -38,10 +38,6 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
-    build:
-      context: .
-      args:
-        foofoofoo: bar
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
@@ -54,6 +50,10 @@ services:
       - '5432'
 
   redis:
+    build:
+      context: .
+      args:
+        foofoofoo: bar
     image: 'redis:5.0-alpine'
     ports:
       - '6379'
