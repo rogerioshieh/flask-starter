@@ -24,7 +24,7 @@ services:
     build:
       context: .
       args:
-        - foo
+        - foo=bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     environment:
@@ -38,6 +38,9 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
+    build: 
+      args:
+        foofoofoo: bar
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
