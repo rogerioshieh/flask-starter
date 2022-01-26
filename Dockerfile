@@ -6,9 +6,12 @@ ARG foo
 ARG foofoo
 ARG foofoofoo
 
-RUN echo "foo: $foo"
-RUN echo "foofoo: $foofoo"
-RUN echo "foofoofoo: $foofoofoo"
+RUN echo "foo: $foo" > test1.txt
+RUN echo "foofoo: $foofoo" > test2.txt
+RUN echo "foofoofoo: $foofoofoo" > test3.txt
+RUN cat test1.txt
+RUN cat test2.txt
+RUN cat test3.txt
 
 # Install system dependencies for: uWSGI, poetry, watchman
 RUN apk add --update --no-cache \

@@ -38,7 +38,8 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
-    build: 
+    build:
+      context: .
       args:
         foofoofoo: bar
     image: 'postgres:9.6-alpine'
