@@ -18,13 +18,13 @@ services:
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
     ports:
-      - '8082:8082'
+      - '8080:8080'
 
   worker:
-    build:
-      context: .
-      args:
-        - foo=bar
+    # build:
+    #   context: .
+    #   args:
+    #     - foo=bar
     labels:
       shipyard.before: 'poetry run flask db upgrade'
     environment:
@@ -38,9 +38,9 @@ services:
       - './src:/srv/src:ro'
 
   postgres:
-    build: 
-      args:
-        foofoofoo: bar
+    # build: 
+    #   args:
+    #     foofoofoo: bar
     image: 'postgres:9.6-alpine'
     environment:
       POSTGRES_USER: 'obscure-user'
