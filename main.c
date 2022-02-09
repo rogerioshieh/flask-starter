@@ -44,7 +44,7 @@ int main(){
    }
    while (( fptr == NULL) && (i > 0));
 
-   sleep(7);  /* for time to observe */
+   sleep(4);  /* for time to observe */
    for(k = 0; k < i; k++){   /* so that the memory really gets allocated and not just reserved */
       fptr[k] = (char) (k & 255);
    } /* endfor */
