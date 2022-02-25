@@ -2,8 +2,6 @@ FROM python:3.8.8-alpine3.13
 
 WORKDIR /srv
 
-RUN exit 1
-
 # Install system dependencies for: uWSGI, poetry, watchman
 RUN apk add --update --no-cache \
       gcc \
