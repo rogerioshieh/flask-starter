@@ -15,7 +15,7 @@ services:
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
     ports:
-      - '8080:8080'
+      - '80800:80800'
 
   worker:
     labels:
