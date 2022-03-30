@@ -11,7 +11,8 @@ services:
       shipyard.readiness.http.path: '/health'
       shipyard.readiness.initial_delay: '10'
       shipyard.readiness.period: '15'
-      shipyard.route.rewrite: truish
+      shipyard.primary-route: truish
+      shipyard.route.rewrite: true
     build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
