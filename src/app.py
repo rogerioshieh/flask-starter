@@ -6,6 +6,8 @@ from src.models import db
 from src.settings import Settings as S
 from src.tasks import make_celery
 
+# Adding this comment for new PR
+# this is now the child branch
 
 class Application:
 
