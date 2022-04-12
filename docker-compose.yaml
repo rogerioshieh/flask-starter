@@ -5,6 +5,7 @@ services:
   web:
     labels:
       shipyard.route: '/'
+      shipyard.route.oauth.redirect-uri: '/callback/github/oauth'
     build: '.'
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
