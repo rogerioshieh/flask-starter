@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  web:
+  web-extra-long-service-name-even-longer-than-you-can-imagine:
     labels:
       shipyard.route: '/'
     build: '.'
