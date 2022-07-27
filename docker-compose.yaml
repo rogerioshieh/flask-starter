@@ -5,7 +5,9 @@ services:
   web:
     labels:
       shipyard.route: '/'
-    build: '.'
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
       DEV: ${DEV}
