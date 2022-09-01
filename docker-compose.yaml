@@ -12,6 +12,7 @@ services:
       FLASK_DEBUG: '1'
     volumes:
       - './filesystem/entrypoints:/entrypoints:ro'
+      - './foo:/entrypoints:ro'
       - './migrations:/srv/migrations'
       - './src:/srv/src:ro'
     ports:
