@@ -17,22 +17,22 @@ services:
     ports:
       - '8080:8080'
 
-        #  worker:
-        #    labels:
-        #      shipyard.before: 'poetry run flask db upgrade'
-        #    build: '.'
-        #    environment:
-        #      DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
-        #      DEV: ${DEV}
-        #      FLASK_DEBUG: '1'
-        #    command: '/entrypoints/worker.sh'
-        #    volumes:
-        #      - './filesystem/entrypoints:/entrypoints:ro'
-        #      - './migrations:/srv/migrations'
-        #      - './src:/srv/src:ro'
-        #    depends_on:
-        #      - postgres
-        #      - redis
+  worker:
+    labels:
+      shipyard.before: 'poetry run flask db upgrade'
+    build: '.'
+    environment:
+      DATABASE_URL: 'postgres://obscure-user:obscure-password@postgres/app'
+      DEV: ${DEV}
+      FLASK_DEBUG: '1'
+    command: '/entrypoints/worker.sh'
+    volumes:
+      - './filesystem/entrypoints:/entrypoints:ro'
+      - './migrations:/srv/migrations'
+      - './src:/srv/src:ro'
+    depends_on:
+      - postgres
+      - redis
 
   postgres:
     image: 'postgres:9.6-alpine'
